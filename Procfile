@@ -1,0 +1,1 @@
+web: gunicorn adrenalina.wsgi --log-file -
