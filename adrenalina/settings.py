@@ -25,7 +25,7 @@ SECRET_KEY = '6vjs=9=4+r4&sqiby(l)y9x-+x@q&$g7$g%o_z2zxxv#x)4g@c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['adrenalina-tecnologia.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['www.adrenalina-tecnologia.com.br', 'adrenalina-tecnologia.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
