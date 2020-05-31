@@ -10,6 +10,8 @@ django = "*"
 gunicorn = "*"
 whitenoise = "*"
 pillow = "*"
+dj-database-url = "*"
+django-decouple = "*"
 
 [requires]
 python_version = "3.8"
