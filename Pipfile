@@ -12,6 +12,7 @@ whitenoise = "*"
 pillow = "*"
 dj-database-url = "*"
 django-decouple = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
