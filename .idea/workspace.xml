@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="760aa6c3-2639-456d-9e33-e9113f5960b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/adrenalina/settings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/templates/core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/templates/core/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adrenalina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/bg-masthead.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/fullsize/portifolio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails/portifolio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/service.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/scripts.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +58,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/assets/img/portfolio/thumbnails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/adrenalina" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina" />
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\core" />
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\adrenalina" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\static\assets\img\portfolio\thumbnails" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\static\assets\img\portfolio\fullsize" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\media\images\portfolio" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\core\static\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\core" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -71,9 +95,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589997177688" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1590930211737">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1591266682149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590930211737" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591266682149" />
   </component>
 </project>
