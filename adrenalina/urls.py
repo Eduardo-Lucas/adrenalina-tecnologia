@@ -21,7 +21,9 @@ from adrenalina import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('apps.accounts.urls')),
     path('', include('apps.core.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

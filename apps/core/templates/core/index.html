@@ -29,6 +29,25 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portifolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
+                        {% if user.is_authenticated %}
+<!--
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" >{{user.username}}</a></li>
+-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Olá {{user.username}}!
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Minha Empresa</a>
+                                    <a class="dropdown-item" href="#">Meu Perfil</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'accounts:logout' %}">Sair</a>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'accounts:login' %}">Login</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
