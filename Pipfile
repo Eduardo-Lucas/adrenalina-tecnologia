@@ -16,6 +16,7 @@ psycopg2 = "*"
 django-import-export = "*"
 django-storages = "*"
 boto3 = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.8"

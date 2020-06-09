@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h5>Empresa</h5>
+    <h6><strong>Dados da Empresa</strong></h6>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row ">
+            <div class="col-md-5">
+                {{form.nome|as_crispy_field}}
+            </div>
+            <div class="col-md-5">
+                {{form.logotipo|as_crispy_field}}
+            </div>
+            <div class="col-md-2">
+                {{form.tipo|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                {{form.cnpj|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.razao_social|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.indicador_inscricao_estadual |as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3">
+                {{form.inscricao_estadual|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.inscricao_municipal|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.inscricao_SUFRAMA|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.optante_simples|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-3">
+                {{form.email|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.telefone_comercial|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.telefone_celular|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.data_fundacao|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                {{form.codigo|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-md-12">
+                {{form.observacao|as_crispy_field}}
+            </div>
+        </div>
+
+        <h6><strong>Contatos do Participante</strong></h6>
+            <hr>
+        <div class="row mt-3 mb-3">
+            <div class="col-md-3">
+                {{form.nome_contato|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.email_contato|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.telefone_contato|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.cargo_contato|as_crispy_field}}
+            </div>
+        </div>
+
+
+        <h6><strong>Endereço do Participante</strong></h6>
+            <hr>
+        <div class="row ">
+            <div class="col-md-4">
+                {{form.cep|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.endereco|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.numero|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-4">
+                {{form.complemento|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.bairro|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.cidade|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                {{form.uf|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.pais|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row border border-dark">
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                    Gravar
+                </button>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'empresa_list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Volta para a Lista
+                </a>
+            </div>
+        </div>
+    </form>
+{% endblock %}

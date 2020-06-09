@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1>Painel da Empresa</h1>
+    <ul>
+        <a href="{% url 'funcionarios:funcionario_list' %}">Funcionários</a>
+        <li>Clientes</li>
+        <li>Produtos</li>
+        <li>Pedidos</li>
+        <li>Caixa</li>
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h5>Funcionário</h5>
+    <h6><strong>Dados do Funcionário</strong></h6>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row ">
+            <div class="col-md-5">
+                {{form.nome|as_crispy_field}}
+            </div>
+
+        </div>
+
+        <div class="row border border-dark">
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                    Gravar
+                </button>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'funcionarios:funcionario_list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Volta para a Lista
+                </a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
