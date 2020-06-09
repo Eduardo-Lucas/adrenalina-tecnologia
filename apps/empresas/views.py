@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -6,21 +7,23 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 from apps.empresas.form import EmpresaForm
 from apps.empresas.models import Empresa
 
-# todo Colocar LoginRequiredMixin nas Generic Views
 
-
-class EmpresaListView(ListView):
+class EmpresaListView(LoginRequiredMixin, ListView):
     model = Empresa
     fields = ['all', ]
     context_object_name = 'empresas'
     template_name = 'empresas/empresa_list.html'
 
+    def get_queryset(self):
+        empresa_logada = self.request.user.funcionario.empresa.id
+        return Empresa.objects.filter(id=empresa_logada)
 
-class EmpresaDetailView(DetailView):
+
+class EmpresaDetailView(LoginRequiredMixin, DetailView):
     pass
 
 
-class EmpresaCreateView(CreateView):
+class EmpresaCreateView(LoginRequiredMixin, CreateView):
     model = Empresa
     form_class = EmpresaForm
     success_message = 'A Empresa %(nome)s foi criada com sucesso.'
@@ -32,15 +35,16 @@ class EmpresaCreateView(CreateView):
         funcionario.save()
 
 
-class EmpresaUpdateView(UpdateView):
+class EmpresaUpdateView(LoginRequiredMixin, UpdateView):
     model = Empresa
     form_class = EmpresaForm
     success_message = 'A Empresa %(nome)s foi atualizada com sucesso.'
 
 
-class EmpresaDeleteView(DeleteView):
+class EmpresaDeleteView(LoginRequiredMixin, DeleteView):
     pass
 
 
+@login_required
 def painel_empresa(request):
     return render(request, 'empresas/empresa_painel.html', {})
