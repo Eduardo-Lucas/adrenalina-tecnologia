@@ -76,4 +76,4 @@ class Empresa(models.Model):
 
     @staticmethod
     def get_absolute_url():
-        return reverse('empresa_list')
+        return reverse('empresas:empresa_list')

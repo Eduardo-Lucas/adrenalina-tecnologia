@@ -40,13 +40,13 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     {% if usuario.funcionario.empresa %}
-                                        <a class="dropdown-item" href="{% url 'empresa_update' usuario.funcionario.empresa.id %}">Editar Empresa</a>
+                                        <a class="dropdown-item" href="{% url 'empresas:empresa_update' usuario.funcionario.empresa.id %}">Editar Empresa</a>
                                     {% else %}
-                                        <a class="dropdown-item" href="{% url 'empresa_create' %}">Cadastrar Empresa</a>
+                                        <a class="dropdown-item" href="{% url 'empresas:empresa_create' %}">Cadastrar Empresa</a>
                                     {% endif %}
                                     <a class="dropdown-item" href="#">Meu Perfil</a>
                                     {% if usuario.funcionario.empresa %}
-                                        <a class="dropdown-item" href="{% url 'painel_empresa' %}">Painel da Empresa</a>
+                                        <a class="dropdown-item" href="{% url 'empresas:painel_empresa' %}">Painel da Empresa</a>
                                     {% endif %}
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{% url 'accounts:logout' %}">Sair</a>

@@ -1,10 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from apps.funcionarios.models import Funcionario
 
 
-class FuncionarioListView(ListView):
+class FuncionarioListView(LoginRequiredMixin, ListView):
     model = Funcionario
     fields = ['all', ]
     context_object_name = 'funcionarios'
@@ -15,13 +16,14 @@ class FuncionarioListView(ListView):
         return Funcionario.objects.filter(empresa=empresa_logada)
 
 
-class FuncionarioDetailView(DetailView):
+class FuncionarioDetailView(LoginRequiredMixin, DetailView):
     pass
 
 
-class FuncionarioCreateView(CreateView):
+class FuncionarioCreateView(LoginRequiredMixin, CreateView):
     model = Funcionario
-    fields = ('nome', )
+    fields = '__all__'
+    exclude = 'empresa'
     success_message = 'O Funcionario %(nome)s foi criado com sucesso.'
 
     def form_valid(self, form):
@@ -33,11 +35,11 @@ class FuncionarioCreateView(CreateView):
         return super(FuncionarioCreateView, self).form_valid(form)
 
 
-class FuncionarioUpdateView(UpdateView):
+class FuncionarioUpdateView(LoginRequiredMixin, UpdateView):
     model = Funcionario
     fields = '__all__'
     success_message = 'O Funcionario %(nome)s foi atualizado com sucesso.'
 
 
-class FuncionarioDeleteView(DeleteView):
+class FuncionarioDeleteView(LoginRequiredMixin, DeleteView):
     pass

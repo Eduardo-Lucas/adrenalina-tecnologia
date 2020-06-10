@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container border border-dark">
+    <h5>Cliente</h5>
+    <h6><strong>Dados do Cliente</strong></h6>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row ">
+            <div class="col-md-3">
+                {{form.razao_social|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.nome_fantasia|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.tipo_participante|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.fisica_juridica|as_crispy_field}}
+            </div>
+        </div>
+
+
+        <div class="row">
+            <strong>Responsável pelo cliente</strong>
+            <div class="col-md-3">
+                {{form.vendedor|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-3">
+                {{form.cnpj_cpf|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.inscricao_estadual|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.inscricao_municipal|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.codigo|as_crispy_field}}
+            </div>
+        </div>
+
+         <strong>Contato do Cliente</strong>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                {{form.telefone|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.celular|as_crispy_field}}
+            </div>
+            <div class="col-md-3" >
+                {{form.email|as_crispy_field}}
+            </div>
+        </div>
+
+         <strong>Endereço do Cliente</strong>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                {{form.cep|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.endereco|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.numero|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.complemento|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                {{form.bairro|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.cidade|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.estado|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.pais|as_crispy_field}}
+            </div>
+        </div>
+
+
+        <div class="row border border-dark">
+            <div class="col-md-8 mt-1 mb-1">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                    Gravar
+                </button>
+            </div>
+            <div class="col-md-4 mt-1">
+                <a href="{% url 'clientes:cliente_list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Volta para a Lista
+                </a>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

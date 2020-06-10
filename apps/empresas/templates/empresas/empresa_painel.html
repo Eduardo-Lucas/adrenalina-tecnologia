@@ -2,12 +2,16 @@
 
 {% block content %}
    <h1>Painel da Empresa</h1>
-    <ul>
+     <ul>
+          <li>
         <a href="{% url 'funcionarios:funcionario_list' %}">Funcionários</a>
-        <li>Clientes</li>
+               </li>
+          <li>
+        <a href="{% url 'clientes:cliente_list' %}">Clientes</a>
+          </li>
         <li>Produtos</li>
         <li>Pedidos</li>
         <li>Caixa</li>
+</ul>
 
-    </ul>
 {% endblock %}
