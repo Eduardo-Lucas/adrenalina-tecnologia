@@ -22,7 +22,7 @@ INDICADOR_INSC_ESTADUAL_CHOICES = (
 class Empresa(models.Model):
     nome = models.CharField(max_length=100, unique=True)
     razao_social = models.CharField(max_length=100, null=True, blank=True)
-    logotipo = models.ImageField(upload_to='empresas', null=True, blank=True)
+    # logotipo = models.ImageField(upload_to='empresas', null=True, blank=True)
     tipo = models.CharField(max_length=10, default='Jurídica', choices=FISICA_JURIDICA_CHOICES)
     ativo = models.BooleanField('Status do cliente', default=True)
     cnpj = models.CharField(max_length=14, null=True, blank=True)
