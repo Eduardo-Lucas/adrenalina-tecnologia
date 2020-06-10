@@ -25,7 +25,7 @@ class EmpresaDetailView(LoginRequiredMixin, DetailView):
 
 class EmpresaCreateView(LoginRequiredMixin, CreateView):
     model = Empresa
-    form_class = EmpresaForm
+    fields = '__all__'
     success_message = 'A Empresa %(nome)s foi criada com sucesso.'
 
     def form_valid(self, form):
@@ -37,7 +37,7 @@ class EmpresaCreateView(LoginRequiredMixin, CreateView):
 
 class EmpresaUpdateView(LoginRequiredMixin, UpdateView):
     model = Empresa
-    form_class = EmpresaForm
+    fields = '__all__'
     success_message = 'A Empresa %(nome)s foi atualizada com sucesso.'
 
 
