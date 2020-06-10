@@ -10,10 +10,12 @@ class Funcionario(models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     nome = models.CharField(max_length=100, help_text='Nome do funcionário')
     empresa = models.ForeignKey(Empresa, null=True, blank=True, on_delete=models.PROTECT)
+    telefone = models.CharField(max_length=30, null=True, blank=True)
+    email = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.nome
 
     @staticmethod
     def get_absolute_url():
-        return reverse('index')
+        return reverse('funcionarios:funcionario_list')

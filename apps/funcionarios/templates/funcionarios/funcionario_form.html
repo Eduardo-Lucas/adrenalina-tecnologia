@@ -9,19 +9,25 @@
         {% csrf_token %}
 
         <div class="row ">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 {{form.nome|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.telefone|as_crispy_field}}
+            </div>
+            <div class="col-md-4">
+                {{form.email|as_crispy_field}}
             </div>
 
         </div>
 
         <div class="row border border-dark">
-            <div class="col-md-8">
+            <div class="col-md-8 mt-1 mb-1">
                 <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
                     Gravar
                 </button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-1 mb-1">
                 <a href="{% url 'funcionarios:funcionario_list' %}" class="btn btn-secondary btn-block btn-lg">
                     <i class="fas fa-stream"></i> Volta para a Lista
                 </a>

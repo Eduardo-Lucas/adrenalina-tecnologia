@@ -22,8 +22,8 @@ class FuncionarioDetailView(LoginRequiredMixin, DetailView):
 
 class FuncionarioCreateView(LoginRequiredMixin, CreateView):
     model = Funcionario
-    fields = '__all__'
-    exclude = 'empresa'
+    fields = ['nome', 'telefone', 'email']
+
     success_message = 'O Funcionario %(nome)s foi criado com sucesso.'
 
     def form_valid(self, form):
@@ -37,7 +37,7 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
 
 class FuncionarioUpdateView(LoginRequiredMixin, UpdateView):
     model = Funcionario
-    fields = '__all__'
+    fields = ['nome', 'telefone', 'email']
     success_message = 'O Funcionario %(nome)s foi atualizado com sucesso.'
 
 

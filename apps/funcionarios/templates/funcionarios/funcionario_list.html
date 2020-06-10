@@ -24,6 +24,8 @@
             <thead class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
+                    <td>Telefone</td>
+                    <td>E-mail</td>
 
                     <td>
                         <a href="{% url 'funcionarios:funcionario_create' %}" class="btn btn-outline-success">
@@ -39,6 +41,8 @@
                     <tr>
 
                         <td>{{ funcionario.nome }}</td>
+                        <td>{{ funcionario.telefone }}</td>
+                        <td>{{ funcionario.email }}</td>
 
                         <td>
                             <a href="{% url 'funcionarios:funcionario_update' funcionario.id %}" class="btn text-secondary px-0">
