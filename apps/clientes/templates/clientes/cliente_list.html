@@ -29,7 +29,7 @@
                     <td>E-mail</td>
                     <td>Ativo</td>
 
-                    {% if object.empresa.ativo %}
+                    {% if request.user.funcionario.empresa.ativo %}
                     <td>
                         <a href="{% url 'clientes:cliente_create' %}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i> Adiciona Novo

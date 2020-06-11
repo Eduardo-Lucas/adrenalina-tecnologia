@@ -26,8 +26,10 @@
                     <td>Nome</td>
                     <td>Telefone</td>
                     <td>E-mail</td>
+                    <td>Ativo</td>
+                    <td></td>
 
-                    {% if object.empresa.ativo %}
+                    {% if request.user.funcionario.empresa.ativo %}
                     <td>
                         <a href="{% url 'funcionarios:funcionario_create' %}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i> Adiciona Novo
@@ -41,7 +43,11 @@
 
                 {% for funcionario in funcionarios %}
                     {% if funcionario.empresa.ativo %}
+                        {% if funcionario.ativo == 'Sim' %}
                     <tr>
+                        {% else %}
+                    <tr class="bg-warning">
+                        {% endif %}
                         <td>{{ funcionario.nome }}</td>
                         <td>{{ funcionario.telefone }}</td>
                         <td>{{ funcionario.email }}</td>
@@ -50,12 +56,10 @@
                             <a href="{% url 'funcionarios:funcionario_update' funcionario.id %}" class="btn text-secondary px-0">
                                 <i class="far fa-edit fa-lg"></i>
                             </a>
-                            <form action="#" method="post" class="d-inline">
-                                {% csrf_token %}
-                                <button type="submit" class="btn">
-                                    <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
-                                </button>
-                            </form>
+                            <a href="{% url 'funcionarios:funcionario_delete' funcionario.id %}" class="btn text-danger px-0 disabled">
+                                <i class="far fa-trash-alt fa-lg"></i>
+                            </a>
+
                         </td>
 
                     </tr>
@@ -72,6 +76,8 @@
                     <td>Nome</td>
                     <td>Telefone</td>
                     <td>E-mail</td>
+                    <td>Ativo</td>
+                    <td></td>
 
                 </tr>
             </tfoot>
