@@ -24,41 +24,63 @@
             <thead class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
+                    <td>Telefone</td>
+                    <td>Celular</td>
+                    <td>E-mail</td>
+                    <td>Ativo</td>
 
+                    {% if object.empresa.ativo %}
                     <td>
                         <a href="{% url 'clientes:cliente_create' %}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i> Adiciona Novo
                         </a>
                     </td>
+                    {% endif %}
 
                 </tr>
             </thead>
             <tbody>
 
                 {% for cliente in clientes %}
-                    <tr>
+                    {% if cliente.empresa.ativo %}
+                        {% if cliente.ativo == 'Sim' %}
+                        <tr>
+                            {% else %}
+                        <tr class="bg-warning">
+                            {% endif %}
 
-                        <td>{{ cliente.razao_social }}</td>
+                            <td>{{ cliente.razao_social }}</td>
+                            <td>{{ cliente.telefone }}</td>
+                            <td>{{ cliente.celular }}</td>
+                            <td>{{ cliente.email }}</td>
+                            <td>{{ cliente.ativo }}</td>
 
-                        <td>
-                            <a href="{% url 'clientes:cliente_update' cliente.id %}" class="btn text-secondary px-0">
-                                <i class="far fa-edit fa-lg"></i>
-                            </a>
-                            <form action="#" method="post" class="d-inline">
-                                {% csrf_token %}
-                                <button type="submit" class="btn">
-                                    <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
-                                </button>
-                            </form>
-                        </td>
+                            <td>
+                                <a href="{% url 'clientes:cliente_update' cliente.id %}" class="btn text-secondary px-0">
+                                    <i class="far fa-edit fa-lg"></i>
+                                </a>
+                                <form action="#" method="post" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">
+                                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                                    </button>
+                                </form>
+                            </td>
 
-                    </tr>
+                        </tr>
+                        {% else %}
+                            <p class="text-center bg-warning">{{cliente.empresa.razao_para_inativar}}</p>
+                        {% endif %}
                 {% endfor %}
 
             </tbody>
             <tfoot class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
+                    <td>Telefone</td>
+                    <td>Celular</td>
+                    <td>E-mail</td>
+                    <td>Ativo</td>
 
                 </tr>
             </tfoot>

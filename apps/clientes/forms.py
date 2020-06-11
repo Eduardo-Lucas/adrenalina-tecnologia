@@ -11,6 +11,7 @@ class ClienteForm(forms.ModelForm):
         labels = {
             'nome': 'Nome do Cliente',
             'razao_social': 'Razão Social',
+            'ativo': 'Ativo',
             'tipo_participante': 'Tipo de Cliente',
             'nome_fantasia': 'Nome Fantasia',
             'fisica_juridica': 'Física/Jurídica',

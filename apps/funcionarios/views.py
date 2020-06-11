@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
+from apps.empresas.models import Empresa
 from apps.funcionarios.models import Funcionario
 
 
@@ -37,6 +38,7 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
 
 class FuncionarioUpdateView(LoginRequiredMixin, UpdateView):
     model = Funcionario
+    context_object_name = 'funcionario'
     fields = ['nome', 'telefone', 'email']
     success_message = 'O Funcionario %(nome)s foi atualizado com sucesso.'
 

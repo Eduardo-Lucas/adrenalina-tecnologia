@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-   <h1>Painel da Empresa</h1>
+   <h1 class="text-center">Painel da Empresa</h1>
+    {% if empresa.ativo %}
      <ul>
           <li>
         <a href="{% url 'funcionarios:funcionario_list' %}">Funcionários</a>
@@ -12,6 +13,10 @@
         <li>Produtos</li>
         <li>Pedidos</li>
         <li>Caixa</li>
-</ul>
+    </ul>
+    {% else %}
+        <p class="text-center bg-warning"><strong>Empresa temporariamente Inativa</strong></p>
+        <p class="text-center bg-warning">Mensagem: <strong>{{ empresa.razao_para_inativar }}</strong></p>
+    {% endif %}
 
 {% endblock %}

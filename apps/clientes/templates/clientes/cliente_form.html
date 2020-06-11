@@ -30,6 +30,9 @@
             <div class="col-md-3">
                 {{form.vendedor|as_crispy_field}}
             </div>
+            <div class="col-md-3">
+                {{form.ativo|as_crispy_field}}
+            </div>
         </div>
 
         <div class="row ">
@@ -95,12 +98,14 @@
 
 
         <div class="row border border-dark">
+            {% if request.user.funcionario.empresa.ativo %}
             <div class="col-md-8 mt-1 mb-1">
                 <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
                     Gravar
                 </button>
             </div>
-            <div class="col-md-4 mt-1">
+            {% endif %}
+            <div class="col-md-4 mt-1 mb-1">
                 <a href="{% url 'clientes:cliente_list' %}" class="btn btn-secondary btn-block btn-lg">
                     <i class="fas fa-stream"></i> Volta para a Lista
                 </a>

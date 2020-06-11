@@ -2,33 +2,23 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
+from apps.core.choices import SIM_NAO_CHOICES, TIPO_PARTICIPANTE_CHOICES, FISICA_JURIDICA_CHOICES
 from apps.empresas.models import Empresa
 from apps.funcionarios.models import Funcionario
-
-FISICA_JURIDICA_CHOICES = (
-                           ('F', 'Pessoa Física'),
-                           ('J', 'Pessoa Jurídica')
-                           )
-
-TIPO_PARTICIPANTE = (
-    ('cliente', 'Cliente'),
-    ('fornecedor', 'Fornecedor'),
-    ('ambos', 'Ambos'),
-    ('transportadora', 'Transportadora'),
-)
 
 
 class Cliente(models.Model):
     """
-    Esse cadastro pode ser um cliente, fornecedor ou uma transportadora
+    Esse cadastro pode ser um cliente, fornecedor, ambos ou uma transportadora
     """
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
     # tabelapreco = models.ForeignKey(TabelaPreco, on_delete=models.CASCADE)
     razao_social = models.CharField(max_length=50, blank=False)
-    tipo_participante = models.CharField(max_length=20, choices=TIPO_PARTICIPANTE, default='cliente')
+    ativo = models.CharField(max_length=3, choices=SIM_NAO_CHOICES, default='Sim')
+    tipo_participante = models.CharField(max_length=20, choices=TIPO_PARTICIPANTE_CHOICES, default='cliente')
     nome_fantasia = models.CharField("Nome Fantasia", max_length=50, blank=False)
-    fisica_juridica = models.CharField("Tipo de Cliente", max_length=1, blank=False,
-                                       choices=FISICA_JURIDICA_CHOICES, default='J')
+    fisica_juridica = models.CharField("Tipo de Cliente", max_length=8, blank=False,
+                                       choices=FISICA_JURIDICA_CHOICES, default='Juridica')
     cnpj_cpf = models.CharField("CNPJ/CPF", max_length=18, blank=True, null=True)
     inscricao_estadual = models.CharField("Inscricao Estadual", max_length=15, blank=False,
                                           default="ISENTO")

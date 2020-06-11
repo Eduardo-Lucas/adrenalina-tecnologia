@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
-from apps.empresas.form import EmpresaForm
 from apps.empresas.models import Empresa
 
 
@@ -47,4 +46,8 @@ class EmpresaDeleteView(LoginRequiredMixin, DeleteView):
 
 @login_required
 def painel_empresa(request):
-    return render(request, 'empresas/empresa_painel.html', {})
+    empresa = Empresa.objects.get(id=request.user.funcionario.empresa.id)
+    context = {
+        'empresa': empresa,
+    }
+    return render(request, 'empresas/empresa_painel.html', context)

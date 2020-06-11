@@ -1,22 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
-FISICA_JURIDICA_CHOICES = (
-    ('Física', 'Fisica'),
-    ('Jurídica', 'Juridica'),
-)
-
-TIPO_PARTICIPANTE_CHOICES = (
-    ('Cliente', 'Cliente'),
-    ('Fornecedor', 'Fornecedor'),
-    ('Funcionário', 'Funcionario'),
-)
-
-INDICADOR_INSC_ESTADUAL_CHOICES = (
-    ('Não contribuinte', 'Não contribuinte'),
-    ('Contribuinte', 'Contribuinte'),
-    ('Contribuinte isento', 'Contribuinte isento'),
-)
+from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_CHOICES
 
 
 class Empresa(models.Model):
@@ -24,7 +9,8 @@ class Empresa(models.Model):
     razao_social = models.CharField(max_length=100, null=True, blank=True)
     # logotipo = models.ImageField(upload_to='empresas', null=True, blank=True)
     tipo = models.CharField(max_length=10, default='Jurídica', choices=FISICA_JURIDICA_CHOICES)
-    ativo = models.BooleanField('Status do cliente', default=True)
+    ativo = models.BooleanField(default=True)
+    razao_para_inativar = models.CharField(max_length=500, null=True, blank=True)
     cnpj = models.CharField(max_length=14, null=True, blank=True)
     cpf = models.CharField(max_length=11, blank=True, null=True, unique=True, )
     rg = models.CharField(max_length=11, blank=True, null=True, unique=True, )

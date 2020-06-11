@@ -26,7 +26,7 @@ class ClienteDetailView(LoginRequiredMixin, DetailView):
 class ClienteCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Cliente
     fields = ['razao_social', 'tipo_participante', 'nome_fantasia', 'fisica_juridica', 'cnpj_cpf', 'inscricao_estadual',
-              'inscricao_municipal', 'codigo', 'vendedor', 'endereco', 'complemento', 'numero', 'bairro', 'cidade',
+              'inscricao_municipal', 'codigo', 'vendedor', 'ativo', 'endereco', 'complemento', 'numero', 'bairro', 'cidade',
               'cep', 'estado', 'pais', 'telefone', 'celular', 'email', ]
 
     # success_message = 'O Cliente %(razao_social)s foi criado com sucesso.'
@@ -41,7 +41,7 @@ class ClienteCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class ClienteUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Cliente
     fields = ['razao_social', 'tipo_participante', 'nome_fantasia', 'fisica_juridica', 'cnpj_cpf', 'inscricao_estadual',
-              'inscricao_municipal', 'codigo', 'vendedor', 'endereco', 'complemento', 'numero', 'bairro', 'cidade',
+              'inscricao_municipal', 'codigo', 'vendedor', 'ativo', 'endereco', 'complemento', 'numero', 'bairro', 'cidade',
               'cep', 'estado', 'pais', 'telefone', 'celular', 'email', ]
 
     success_message = 'O Cliente %(razao_social)s foi atualizado com sucesso.'

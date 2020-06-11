@@ -27,23 +27,24 @@
                     <td>Telefone</td>
                     <td>E-mail</td>
 
+                    {% if object.empresa.ativo %}
                     <td>
                         <a href="{% url 'funcionarios:funcionario_create' %}" class="btn btn-outline-success">
                             <i class="fas fa-plus"></i> Adiciona Novo
                         </a>
                     </td>
+                    {% endif %}
 
                 </tr>
             </thead>
             <tbody>
 
                 {% for funcionario in funcionarios %}
+                    {% if funcionario.empresa.ativo %}
                     <tr>
-
                         <td>{{ funcionario.nome }}</td>
                         <td>{{ funcionario.telefone }}</td>
                         <td>{{ funcionario.email }}</td>
-
                         <td>
                             <a href="{% url 'funcionarios:funcionario_update' funcionario.id %}" class="btn text-secondary px-0">
                                 <i class="far fa-edit fa-lg"></i>
@@ -57,12 +58,19 @@
                         </td>
 
                     </tr>
+                    {% else %}
+                        <p class="text-center bg-warning">{{funcionario.empresa.razao_para_inativar}}</p>
+                    {% endif %}
+
+
                 {% endfor %}
 
             </tbody>
             <tfoot class="border-bottom font-weight-bold">
                 <tr>
                     <td>Nome</td>
+                    <td>Telefone</td>
+                    <td>E-mail</td>
 
                 </tr>
             </tfoot>

@@ -4,6 +4,7 @@
 {% block content %}
     <h5>Funcionário</h5>
     <h6><strong>Dados do Funcionário</strong></h6>
+
     <hr>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -22,11 +23,13 @@
         </div>
 
         <div class="row border border-dark">
+            {% if request.user.funcionario.empresa.ativo %}
             <div class="col-md-8 mt-1 mb-1">
                 <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
                     Gravar
                 </button>
             </div>
+            {% endif %}
             <div class="col-md-4 mt-1 mb-1">
                 <a href="{% url 'funcionarios:funcionario_list' %}" class="btn btn-secondary btn-block btn-lg">
                     <i class="fas fa-stream"></i> Volta para a Lista
