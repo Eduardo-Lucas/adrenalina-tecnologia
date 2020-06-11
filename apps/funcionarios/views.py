@@ -23,7 +23,7 @@ class FuncionarioDetailView(LoginRequiredMixin, DetailView):
 
 class FuncionarioCreateView(LoginRequiredMixin, CreateView):
     model = Funcionario
-    fields = ['nome', 'telefone', 'email']
+    fields = ['nome', 'telefone', 'email', 'ativo']
 
     success_message = 'O Funcionario %(nome)s foi criado com sucesso.'
 
@@ -39,7 +39,7 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
 class FuncionarioUpdateView(LoginRequiredMixin, UpdateView):
     model = Funcionario
     context_object_name = 'funcionario'
-    fields = ['nome', 'telefone', 'email']
+    fields = ['nome', 'telefone', 'email', 'ativo']
     success_message = 'O Funcionario %(nome)s foi atualizado com sucesso.'
 
 

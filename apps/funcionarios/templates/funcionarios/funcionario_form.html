@@ -10,14 +10,17 @@
         {% csrf_token %}
 
         <div class="row ">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 {{form.nome|as_crispy_field}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 {{form.telefone|as_crispy_field}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 {{form.email|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.ativo|as_crispy_field}}
             </div>
 
         </div>
