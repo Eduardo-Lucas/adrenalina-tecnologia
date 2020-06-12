@@ -3,17 +3,22 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 from apps.accounts.forms import CreateUserForm
+from apps.funcionarios.models import Funcionario
 
 
 def registerPage(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('empresas:painel_empresa')
     else:
         form = CreateUserForm()
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid():
-                form.save()
+                user = form.save()
+                f = Funcionario(user=user,
+                                nome=form.cleaned_data.get('username'),
+                                email=form.cleaned_data.get('email'))
+                f.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
 
@@ -25,7 +30,7 @@ def registerPage(request):
 
 def login_page(request):
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('empresas:painel_empresa')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -35,9 +40,10 @@ def login_page(request):
 
             if user is not None:
                 login(request, user)
+                messages.add_message(request, messages.SUCCESS, 'Bem-vindo '+str(user)+'!')
                 return redirect('index')
             else:
-                messages.info(request, 'Usuário ou senha está incorreto')
+                messages.add_message(request, messages.ERROR, 'Usuário ou senha está incorreto')
 
         context = {}
         return render(request, 'accounts/login.html', context)
@@ -45,4 +51,5 @@ def login_page(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('index')
+    messages.add_message(request, messages.INFO, 'Obrigado por usar a plataforma e volte logo!')
+    return redirect('empresas:painel_empresa')

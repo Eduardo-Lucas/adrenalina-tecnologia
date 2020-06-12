@@ -8,7 +8,7 @@ from apps.empresas.models import Empresa
 
 class Funcionario(models.Model):
     """Manutenção do Cadastro de Funcionários"""
-    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT)
     nome = models.CharField(max_length=100, help_text='Nome do funcionário')
     empresa = models.ForeignKey(Empresa, null=True, blank=True, on_delete=models.PROTECT)
     telefone = models.CharField(max_length=30, null=True, blank=True)

@@ -1,7 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from apps.empresas.models import Empresa
@@ -28,10 +29,13 @@ class EmpresaCreateView(LoginRequiredMixin, CreateView):
     success_message = 'A Empresa %(nome)s foi criada com sucesso.'
 
     def form_valid(self, form):
-        obj = form.save()
+        obj = form.save(commit=False)
+        obj.ativo = True
+        obj.save()
         funcionario = self.request.user.funcionario
         funcionario.empresa = obj
         funcionario.save()
+        return redirect('empresas:painel_empresa')
 
 
 class EmpresaUpdateView(LoginRequiredMixin, UpdateView):

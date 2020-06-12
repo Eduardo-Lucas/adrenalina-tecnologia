@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -16,12 +15,12 @@
     <div class="container">
         <div class="col-md-10 offset-md-1 mt-0">
             <div class="jumbotron">
-                <div class="container text-center mt-0">
+                <!--<div class="container text-center mt-0">
                     <img src="{% static 'images/logo.jpg' %}" heigth="150" width="150" alt="Logotipo">
-                </div>
+                </div>-->
 
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#">{{user.username}}</a>
+                    <a class="navbar-brand" href="{% url 'index' %}">{{user.username}}</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -29,7 +28,7 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'index' %}">Visão Geral<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'empresas:painel_empresa' %}">Painel da Empresa<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="#">Vendas<span class="sr-only">(current)</span></a>
