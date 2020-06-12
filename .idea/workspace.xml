@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="760aa6c3-2639-456d-9e33-e9113f5960b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/funcionarios/migrations/0003_auto_20200612_1116.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/migrations/0002_auto_20200611_2012.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/migrations/0003_auto_20200612_0939.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/migrations/0004_auto_20200612_0940.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/templates/produtos/categoria_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/templates/produtos/produto_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/templates/produtos/produto_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/templates/produtos/produto_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/templates/produtos/produto_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/produtos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adrenalina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adrenalina/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
