@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="760aa6c3-2639-456d-9e33-e9113f5960b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/clientes/migrations/0004_auto_20200613_1225.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/empresas/migrations/0003_empresa_serve_refeicao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/migrations/0002_tabelapreco.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/migrations/0003_auto_20200613_1040.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/resources.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/templates/financeiro/prazopagamento_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/templates/financeiro/tipopagamento_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/financeiro/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/migrations/0002_auto_20200613_1040.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/resources.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/templates/lojas/loja_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/lojas/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0002_auto_20200613_1225.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0003_mesa_aberta.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0004_auto_20200613_1504.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0005_auto_20200613_1533.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0006_auto_20200613_1635.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0007_auto_20200613_1649.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/templates/pedidos/pedido_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/templates/pedidos/pedido_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/pedidos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adrenalina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adrenalina/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/clientes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/clientes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/produtos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/produtos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/produtos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/produtos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
