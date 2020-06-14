@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Tipos de Pagamento</h1>
+    <ul>
+    {% for tipo in object_list %}
+        <li>{{tipo.descricao}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

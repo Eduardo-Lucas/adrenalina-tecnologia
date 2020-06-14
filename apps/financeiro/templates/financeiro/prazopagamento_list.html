@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Prazos de Pagamento</h1>
+    <ul>
+    {% for prazo in object_list %}
+        <li>{{prazo.descricao}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

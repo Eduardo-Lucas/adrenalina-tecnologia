@@ -56,7 +56,7 @@ class Produto(models.Model):
         return url
 
     def __str__(self):
-        return self.nome
+        return self.nome + ' R$ ' + str(self.preco)
 
     def is_available(self):
         if self.saldo > 0:

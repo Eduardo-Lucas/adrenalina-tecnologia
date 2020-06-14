@@ -97,5 +97,5 @@ class Cliente(models.Model):
 
     class Meta:
         ordering = ['razao_social']
-        verbose_name = 'Cadastro de Cliente'
-        verbose_name_plural = 'Cadastro de Clientes'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'

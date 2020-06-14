@@ -29,7 +29,6 @@ class ProdutoCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = ProdutoForm
     success_message = 'O Produto %(nome)s foi criado com sucesso.'
 
-
     def form_valid(self, form):
         produto = form.save(commit=False)
         produto.empresa = self.request.user.funcionario.empresa

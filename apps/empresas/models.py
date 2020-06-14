@@ -4,9 +4,11 @@ from django.urls import reverse
 from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_CHOICES
 
 
+# todo Para aparecer a lista de Mesas, precisa indicar que serve refeiçoes
 class Empresa(models.Model):
     nome = models.CharField(max_length=100, unique=True)
     razao_social = models.CharField(max_length=100, null=True, blank=True)
+    serve_refeicao = models.BooleanField(default=False)
     # logotipo = models.ImageField(upload_to='empresas', null=True, blank=True)
     tipo = models.CharField(max_length=10, default='Jurídica', choices=FISICA_JURIDICA_CHOICES)
     ativo = models.BooleanField(default=True)
