@@ -7,7 +7,7 @@ from apps.pedidos.models import Pedido, PedidoItem
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['cliente', 'loja', 'mesa', 'status_pedido', 'tipo_de_pagamento', 'prazo_de_pagamento']
+        fields = ['cliente', 'loja', 'mesa', 'pedidostatus', 'tipo_de_pagamento', 'prazo_de_pagamento']
 
 
 class PedidoItemForm(forms.ModelForm):
