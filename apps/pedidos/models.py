@@ -58,7 +58,7 @@ class Pedido(models.Model):
                                                          'fiscal eletrônica')
 
     status_pedido = models.ForeignKey(PedidoStatus, max_length=50,
-                                      on_delete=models.CASCADE, default='Pedido')
+                                      on_delete=models.CASCADE, default=1)
 
     # Código do regime Tributário do emitente ou do fornecedor 1-Simples na 2-Simples exc  3-Normal
     regime_tributario = models.CharField("Regime Tributário Emitente", max_length=1, null=False, default="1",
