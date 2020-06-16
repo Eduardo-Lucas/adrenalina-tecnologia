@@ -31,28 +31,28 @@
                                 <a class="nav-link" href="{% url 'empresas:painel_empresa' %}">Painel da Empresa<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="#">Vendas<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'funcionarios:funcionario_list' %}">Funcionários<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="#">Compras<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'clientes:cliente_list' %}">Clientes<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Financeiro <span class="sr-only"></span></a>
+                                <a class="nav-link" href="{% url 'produtos:produto_list' %}">Produtos <span class="sr-only"></span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Relatórios <span class="sr-only"></span></a>
+                                <a class="nav-link" href="{% url 'pedidos:pedido_list' %}">Pedidos <span class="sr-only"></span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'empresas:empresa_list' %}">Empresas <span class="sr-only"></span></a>
+                                <a class="nav-link" href="#">Caixa <span class="sr-only"></span></a>
                             </li>
 <!--
                             Essa opção só aparece se o usuário for Supervisor
 -->
-                            {% if user.is_superuser %}
+                            <!--{% if user.is_superuser %}
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">Gestão <span class="sr-only"></span></a>
                                 </li>
-                            {% endif %}
+                            {% endif %}-->
 <!--
                             Essa opção só aparece se o usuário for Supervisor
 -->
@@ -83,6 +83,11 @@
                 {% include 'messages.html' %}
                 {% block content %}
                 {% endblock %}
+
+                <footer class="text-center">
+                    <h6>Empresa: {{request.user.funcionario.empresa.nome}}</h6>
+                </footer>
+
             </div>
         </div>
     </div>
@@ -98,4 +103,6 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
 </body>
+
+
 </html>

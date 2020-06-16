@@ -1,28 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container border border-dark">
    <h3 class="text-center">Painel da Empresa: {{request.user.funcionario.empresa.nome}}</h3>
     {% if empresa.ativo %}
      <ul>
          <li>
-             <a href="{% url 'funcionarios:funcionario_list' %}">Funcionários</a>
+             <a href="{% url 'funcionarios:funcionario_list' %}">
+                 <span class="badge badge-pill badge-info">
+                     {{funcionarios.count}} funcionários
+                 </span>
+             </a>
          </li>
          <li>
-             <a href="{% url 'clientes:cliente_list' %}">Clientes</a>
+             <a href="{% url 'clientes:cliente_list' %}">
+                 <span class="badge badge-pill badge-info">
+                     {{clientes.count}} clientes
+                 </span>
+             </a>
          </li>
         <li>
-            <a href="{% url 'produtos:produto_list' %}">Produtos</a>
+            <a href="{% url 'produtos:produto_list' %}">
+                 <span class="badge badge-pill badge-info">
+                     {{produtos.count}} produtos
+                 </span>
+            </a>
         </li>
          <!-- O pedido tem que vir com status para saber quando foi pago,
          para poder dar entrada no caixa da empresa -->
         <li>
-            <a href="{% url 'pedidos:pedido_list' %}">Pedidos</a>
+            <a href="{% url 'pedidos:pedido_list' %}">
+                 <span class="badge badge-pill badge-info">
+                     {{pedidos.count}} pedidos
+                 </span>
+            </a>
         </li>
-        <li>Caixa</li>
+
     </ul>
     {% else %}
         <p class="text-center bg-warning"><strong>Empresa temporariamente Inativa</strong></p>
         <p class="text-center bg-warning">Mensagem: <strong>{{ empresa.razao_para_inativar }}</strong></p>
     {% endif %}
-
+</div>
 {% endblock %}

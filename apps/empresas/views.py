@@ -5,7 +5,11 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
+from apps.clientes.models import Cliente
 from apps.empresas.models import Empresa
+from apps.funcionarios.models import Funcionario
+from apps.pedidos.models import Pedido
+from apps.produtos.models import Produto
 
 
 class EmpresaListView(LoginRequiredMixin, ListView):
@@ -51,7 +55,16 @@ class EmpresaDeleteView(LoginRequiredMixin, DeleteView):
 @login_required
 def painel_empresa(request):
     empresa = Empresa.objects.get(id=request.user.funcionario.empresa.id)
+    funcionarios = Funcionario.objects.filter(empresa=request.user.funcionario.empresa.id)
+    clientes = Cliente.objects.filter(empresa=request.user.funcionario.empresa.id)
+    produtos = Produto.objects.filter(empresa=request.user.funcionario.empresa.id)
+    pedidos = Pedido.objects.filter(empresa=request.user.funcionario.empresa.id)
+
     context = {
         'empresa': empresa,
+        'funcionarios': funcionarios,
+        'clientes': clientes,
+        'produtos': produtos,
+        'pedidos': pedidos,
     }
     return render(request, 'empresas/empresa_painel.html', context)
