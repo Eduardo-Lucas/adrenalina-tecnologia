@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.core',
     'apps.empresas',
+    'apps.expedicao',
     'apps.financeiro',
     'apps.clientes',
     'apps.funcionarios',
