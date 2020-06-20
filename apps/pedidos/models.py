@@ -46,8 +46,8 @@ class Pedido(models.Model):
     # id do será o Número do pedido
     # Série será as 3 primeiras letras do Código da empresa
     # subserie conforme operação "VEN" "ORC" "DEV"=DEVOLUÇÃO "ETC"
-    empresa = models.ForeignKey(Empresa, default=1, on_delete=models.CASCADE,  )
-    loja = models.ForeignKey(Loja, default=1, on_delete=models.CASCADE,  )
+    empresa = models.ForeignKey(Empresa, default=1, on_delete=models.CASCADE,)
+    loja = models.ForeignKey(Loja, default=1, on_delete=models.CASCADE,)
     mesa = models.ForeignKey(Mesa, null=True, blank=True, on_delete=models.SET_NULL)
     serie = models.CharField(max_length=3, null=False, default='MAT')
     subserie = models.CharField(max_length=3, null=False, default='VEN')

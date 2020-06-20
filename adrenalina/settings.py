@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'storages',
 
     'apps.accounts',
+    'apps.caixas',
     'apps.core',
     'apps.empresas',
     'apps.expedicao',

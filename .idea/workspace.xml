@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="760aa6c3-2639-456d-9e33-e9113f5960b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/templates/altera_loja.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/templates/expedicao.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/expedicao/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adrenalina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adrenalina/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/templates/caixas/caixa_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/templates/caixas/caixa_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/templates/caixas/caixa_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/templates/caixas/caixa_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/caixas/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/caixas/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/choices.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/choices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/pedidos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/pedidos/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
@@ -53,18 +52,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\caixa\templates\caixa" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\pedidos\templates\pedidos" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina" />
+      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\core" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\expedicao\templates" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\pedidos\templates\pedidos" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\pedidos" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps" />
       <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\pedidos\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps" />
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\pedidos\templates\pedidos" />
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina" />
-      <recent name="C:\Users\eduar\Projetos\DjangoProjects\Dev\adrenalina\apps\core" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,5 +156,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="456" y="4" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1591965359890" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592679585398">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592679585398" />
   </component>
 </project>
