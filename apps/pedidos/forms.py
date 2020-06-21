@@ -14,7 +14,7 @@ class PedidoItemForm(forms.ModelForm):
     class Meta:
         model = PedidoItem
         fields = (
-            'produto', 'quantidade', 'total_produto',
+            'produto', 'quantidade', 'preco_unitario', 'total_produto',
         )
         # fields = (
         #     'produto', 'preco_venda', 'quantidade', 'total_produto',
@@ -23,7 +23,7 @@ class PedidoItemForm(forms.ModelForm):
                    'cfop', 'codigo_ncm', 'codigo_cest', 'status_pedido_item', 'autorizacao_faturamento',
                    'autorizacao_numitem', 'peso_liquido', 'peso_bruto', 'metro_cubico', 'movimenta_estoques',
                    'saldo_fisico', 'saldo_fiscal', 'preco_custo', 'preco_medio', 'preco_custo_nfe', 'preco_medio_nfe',
-                   'preco_unitario', 'perc_desc', 'custo_informado', 'data_movimento', 'modalidade_ipi',
+                   'perc_desc', 'custo_informado', 'data_movimento', 'modalidade_ipi',
                    'situacao_tributaria_ipi', 'base_calc_ipi', 'perc_ipi', 'perc_red_ipi', 'modalidade_calculo',
                    'modalidade_icms', 'situacao_tributaria_icms', 'base_calc_icms', 'perc_icms',
                    'perc_antec_tributaria', 'perc_red_icms', 'modalidade_calculo_subst', 'base_calc_icms_sub',

@@ -414,7 +414,7 @@ class PedidoItem(models.Model):
                                                     'entrada ou saida')
 
     preco_unitario = models.DecimalField("Preço Unitário", max_length=16, max_digits=16,
-                                         decimal_places=6, default=0.00,
+                                         decimal_places=2, default=0.00,
                                          help_text='Preço unitário de venda conforme negociação e configurações do '
                                                    'sistema')
     perc_desc = models.DecimalField("% Desc", max_length=10, max_digits=10,

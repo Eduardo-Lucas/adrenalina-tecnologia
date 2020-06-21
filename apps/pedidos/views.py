@@ -1,12 +1,17 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db import transaction
-from django.shortcuts import render
+from django.http import HttpResponse, QueryDict
+from django.shortcuts import render, get_object_or_404
+from django.template.loader import get_template
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import View
 
 from apps.pedidos.forms import PedidoForm, PedidoItemFormSet
-from apps.pedidos.models import Pedido
+from apps.pedidos.models import Pedido, PedidoItem
+from apps.produtos.models import Produto
+from utils import render_to_pdf
 
 
 class PedidoListView(LoginRequiredMixin, ListView):
@@ -54,6 +59,35 @@ class PedidoUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
             self.object = form.save()
 
             if pedido_items.is_valid():
+                instances = pedido_items.save(commit=False)
+                for instance in instances:
+                    produto = Produto.objects.get(id=instance.produto.id)
+                    instance.preco_unitario = produto.preco
+                    instance.total_produto = instance.quantidade * instance.preco_unitario
                 pedido_items.save()
 
         return super(PedidoUpdateView, self).form_valid(form)
+
+
+def pedidoPDF(request, id):
+    pedido = get_object_or_404(Pedido, id=id)
+    items = PedidoItem.objects.filter(pedido=pedido)
+    template = get_template('pedidos/pedido.html')
+
+    context = {
+        "pedido": pedido,
+        "items": items,
+
+    }
+    html = template.render(context)
+    pdf = render_to_pdf('pedidos/pedido.html', context)
+    if pdf:
+        response = HttpResponse(pdf, content_type='application/pdf')
+        filename = "Pedido_%s.pdf" %(str(id))
+        content = "inline; filename='%s'" % filename
+        download = request.GET.get("download")
+        if download:
+            content = "attachment; filename='%s'" % filename
+        response['Content-Disposition'] = content
+        return response
+    return HttpResponse("Not found")

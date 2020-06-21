@@ -7,4 +7,6 @@ urlpatterns = [
     path('create', PedidoCreateView.as_view(), name='pedido_create'),
     path('update/<int:pk>', PedidoUpdateView.as_view(), name='pedido_update'),
 
+    path('pedido_pdf/<int:id>', pedidoPDF, name='pedido_pdf'),
+
 ]
