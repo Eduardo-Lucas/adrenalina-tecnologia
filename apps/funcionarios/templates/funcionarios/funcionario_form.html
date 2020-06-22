@@ -2,8 +2,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h5>Funcionário</h5>
-    <h6><strong>Dados do Funcionário</strong></h6>
+    {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia'%}
+        <h5>Parceiro</h5>
+        <h6><strong>Dados do Parceiro</strong></h6>
+    {% else %}
+        <h5>Funcionário</h5>
+        <h6><strong>Dados do Funcionário</strong></h6>
+    {% endif %}
 
     <hr>
     <form method="post" enctype="multipart/form-data">

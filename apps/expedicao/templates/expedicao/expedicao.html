@@ -31,19 +31,19 @@ PEDIDOS A SEPARAR
                     {% else %} class="bg-warning"
                      {% endif %}>
                       <td>{{ pedido.id }}</td>
-                      <td>{{ pedido.participante }}</td>
-                      <td>{{ pedido.created }}</td>
+                      <td>{{ pedido.cliente }}</td>
+                      <td>{{ pedido.created|date:"d/m/Y H:i" }}</td>
                       <td>{{ pedido.total_produtos }}</td>
                       <td>{{ pedido.tipo_pedido }}</td>
                       <td>{{ pedido.loja }}</td>
-                      <td><a href="{% url 'materiais:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
+                      <td><a href="{% url 'expedicao:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
                              data-placement="top" title="Altera a Loja">
                                     <i class="fas fa-edit"></i>
                           </a>
                       </td>
                       <td>{{ pedido.status_pedido }}</td>
                       <td>
-                          <form action="{% url 'materiais:inicia_separacao' pedido.id %}" method="post">
+                          <form action="{% url 'expedicao:inicia_separacao' pedido.id %}" method="post">
                                 <input class="btn btn-secondary" type="submit" value="Preparar">
                                 {% csrf_token %}
                           </form>
@@ -83,19 +83,19 @@ PEDIDOS EM PROCESSO DE PREPARAÇÃO
               <tbody>
                 <tr>
                       <td>{{ pedido.id }}</td>
-                      <td>{{ pedido.participante }}</td>
-                      <td>{{ pedido.created }}</td>
+                      <td>{{ pedido.cliente }}</td>
+                      <td>{{ pedido.created|date:"d/m/Y H:i" }}</td>
                       <td>{{ pedido.total_produtos }}</td>
                       <td>{{ pedido.tipo_pedido }}</td>
                       <td>{{ pedido.loja }}</td>
-                      <td><a href="{% url 'materiais:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
+                      <td><a href="{% url 'expedicao:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
                              data-placement="top" title="Altera a Loja">
                             <i class="fas fa-edit"></i>
                           </a>
                       </td>
                       <td>{{ pedido.status_pedido }}</td>
                       <td>
-                          <form action="{% url 'materiais:finaliza_separacao' pedido.id %}" method="post">
+                          <form action="{% url 'expedicao:finaliza_separacao' pedido.id %}" method="post">
                                 <input class="btn btn-warning" type="submit" value="Finalizar">
                                 {% csrf_token %}
                           </form>
@@ -134,19 +134,19 @@ PEDIDOS PRONTOS
               <tbody>
                 <tr>
                   <td>{{ pedido.id }}</td>
-                  <td>{{ pedido.participante }}</td>
-                  <td>{{ pedido.created }}</td>
+                  <td>{{ pedido.cliente }}</td>
+                  <td>{{ pedido.created|date:"d/m/Y H:i" }}</td>
                   <td>{{ pedido.total_produtos }}</td>
                   <td>{{ pedido.tipo_pedido }}</td>
                   <td>{{ pedido.loja }}</td>
-                  <td><a href="{% url 'materiais:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
+                  <td><a href="{% url 'expedicao:altera_loja' pedido.id %}" class="btn btn-outline-primary btn-sm" role="button" data-toggle="tooltip"
                              data-placement="top" title="Altera a Loja">
                                     <i class="fas fa-edit"></i>
                       </a>
                   </td>
                   <td>{{ pedido.status_pedido }}</td>
                   <td>
-                      <form action="{% url 'materiais:estorna_separacao' pedido.id %}" method="post">
+                      <form action="{% url 'expedicao:estorna_separacao' pedido.id %}" method="post">
                             <input class="btn btn-success" type="submit" value="Estornar">
                             {% csrf_token %}
                       </form>

@@ -20,7 +20,7 @@ def registerPage(request):
                                 email=form.cleaned_data.get('email'))
                 f.save()
                 user = form.cleaned_data.get('username')
-                messages.success(request, 'Account was created for ' + user)
+                messages.success(request, 'Uma conta foi criada para o usuário ' + user)
 
                 return redirect('accounts:login')
 

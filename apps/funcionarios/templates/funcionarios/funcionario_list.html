@@ -19,7 +19,11 @@
 <body>
 
     <div class="container mb-3 mt-3">
-        <h1>Lista de Funcionários</h1>
+        {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia' %}
+            <h1>Lista de Parceiros</h1>
+        {% else %}
+            <h1>Lista de Funcionários</h1>
+        {% endif %}
         <table class="table table-striped table-bordered mydatatable" style="width: 100%" >
             <thead class="border-bottom font-weight-bold">
                 <tr>
@@ -27,14 +31,13 @@
                     <td>Telefone</td>
                     <td>E-mail</td>
                     <td>Ativo</td>
-                    <td></td>
 
                     {% if request.user.funcionario.empresa.ativo %}
-                    <td>
-                        <a href="{% url 'funcionarios:funcionario_create' %}" class="btn btn-outline-success">
-                            <i class="fas fa-plus"></i> Adiciona Novo
-                        </a>
-                    </td>
+                        <td>
+                            <a href="{% url 'funcionarios:funcionario_create' %}" class="btn btn-outline-success">
+                                <i class="fas fa-plus"></i> Adiciona Novo
+                            </a>
+                        </td>
                     {% endif %}
 
                 </tr>
@@ -44,9 +47,9 @@
                 {% for funcionario in funcionarios %}
                     {% if funcionario.empresa.ativo %}
                         {% if funcionario.ativo == 'Sim' %}
-                    <tr>
+                            <tr>
                         {% else %}
-                    <tr class="bg-warning">
+                            <tr class="bg-warning">
                         {% endif %}
                         <td>{{ funcionario.nome }}</td>
                         <td>{{ funcionario.telefone }}</td>

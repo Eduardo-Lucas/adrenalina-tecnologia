@@ -35,7 +35,14 @@
                                 <a class="nav-link" href="{% url 'empresas:painel_empresa' %}">Painel da Empresa<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{% url 'funcionarios:funcionario_list' %}">Funcionários<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{% url 'funcionarios:funcionario_list' %}">
+                                    {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia' %}
+                                        Parceiros
+                                    {% else %}
+                                        Funcionários
+                                    {% endif %}
+                                    <span class="sr-only">(current)</span>
+                                </a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'clientes:cliente_list' %}">Clientes<span class="sr-only">(current)</span></a>
