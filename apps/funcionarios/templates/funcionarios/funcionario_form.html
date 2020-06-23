@@ -21,13 +21,51 @@
             <div class="col-md-3">
                 {{form.telefone|as_crispy_field}}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {{form.email|as_crispy_field}}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 {{form.ativo|as_crispy_field}}
             </div>
+            <div class="col-md-2">
+                {{form.quantidade_clientes|as_crispy_field}}
+            </div>
+        </div>
 
+        {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia'%}
+            <h6><strong>Endereço do Parceiro</strong></h6>
+        {% else %}
+            <h6><strong>Endereço do Funcionário</strong></h6>
+        {% endif %}
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                {{form.cep|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.endereco|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.numero|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.complemento|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                {{form.bairro|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.cidade|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.estado|as_crispy_field}}
+            </div>
+            <div class="col-md-3">
+                {{form.pais|as_crispy_field}}
+            </div>
         </div>
 
         <div class="row border border-dark">

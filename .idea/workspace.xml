@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="760aa6c3-2639-456d-9e33-e9113f5960b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/funcionarios/migrations/0002_auto_20200623_1728.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/pedidos/migrations/0002_auto_20200623_1728.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/empresas/templates/empresas/empresa_painel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/expedicao/templates/altera_loja.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/expedicao/templates/expedicao/altera_loja.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/expedicao/templates/expedicao.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/expedicao/templates/expedicao/expedicao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/expedicao/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/expedicao/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adrenalina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/adrenalina/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionarios/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/templates/funcionarios/funcionario_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/funcionarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/funcionarios/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/expedicao/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django-rest-framework-datatables" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -109,10 +106,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1589997177688">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1592911432205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589997177688" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592911432205" />
     <state width="1345" height="261" key="GridCell.Tab.0.bottom" timestamp="1591747373840">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
