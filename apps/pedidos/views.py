@@ -1,13 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db import transaction
-from django.http import HttpResponse, QueryDict
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import get_template
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView
 from django.views.generic import View
 
+from apps.clientes.models import Cliente
 from apps.pedidos.forms import PedidoForm, PedidoItemFormSet
 from apps.pedidos.models import Pedido, PedidoItem
 from apps.produtos.models import Produto
@@ -26,9 +26,15 @@ class PedidoListView(LoginRequiredMixin, ListView):
 
 
 class PedidoCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+
     model = Pedido
     form_class = PedidoForm
     success_url = reverse_lazy('pedidos:pedido_list')
+
+    def get_context_data(self, **kwargs):
+        data = super(PedidoCreateView, self).get_context_data(**kwargs)
+        print(data)
+        return data
 
     def form_valid(self, form):
         pedido = form.save(commit=False)

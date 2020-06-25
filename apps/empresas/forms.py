@@ -13,6 +13,8 @@ class EmpresaForm(forms.ModelForm):
             'razao_social': 'Razão Social',
             'tipo': 'Tipo',
             'ativo': 'Status da Empresa',
+            'serve_refeicao': 'Serve Refeição',
+            'codigo': 'Código da Empresa',
             'cnpj': 'CNPJ',
             'cpf': 'CPF',
             'rg': 'RG',

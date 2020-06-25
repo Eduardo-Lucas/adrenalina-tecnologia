@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_CHOICES
 
@@ -7,6 +8,7 @@ from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_C
 # todo Para aparecer a lista de Mesas, precisa indicar que serve refeiçoes
 class Empresa(models.Model):
     nome = models.CharField(max_length=100, unique=True)
+    slug = models.CharField(max_length=100, null=True, blank=True)
     razao_social = models.CharField(max_length=100, null=True, blank=True)
     serve_refeicao = models.BooleanField(default=False)
     # logotipo = models.ImageField(upload_to='empresas', null=True, blank=True)
@@ -48,6 +50,10 @@ class Empresa(models.Model):
 
     uf = models.CharField(max_length=2, default='SC', )
     pais = models.CharField(max_length=15, default='Brasil', )
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.nome)
+        super(Empresa, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.nome

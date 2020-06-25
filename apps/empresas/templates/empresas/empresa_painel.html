@@ -2,48 +2,60 @@
 
 {% block content %}
 <div class="container border border-dark">
-   <h3 class="text-center">Painel da Empresa: {{request.user.funcionario.empresa.nome}}</h3>
-    {% if empresa.ativo %}
-     <ul>
-         <li>
-             <a href="{% url 'funcionarios:funcionario_list' %}">
-                 <span class="badge badge-pill badge-info">
-                     {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia' %}
-                        {{funcionarios.count}} parceiros
-                     {% else %}
-                        {{funcionarios.count}} funcionários
-                     {% endif %}
-                 </span>
-             </a>
-         </li>
-         <li>
-             <a href="{% url 'clientes:cliente_list' %}">
-                 <span class="badge badge-pill badge-info">
-                     {{clientes.count}} clientes
-                 </span>
-             </a>
-         </li>
-        <li>
-            <a href="{% url 'produtos:produto_list' %}">
-                 <span class="badge badge-pill badge-info">
-                     {{produtos.count}} produtos
-                 </span>
-            </a>
-        </li>
-         <!-- O pedido tem que vir com status para saber quando foi pago,
-         para poder dar entrada no caixa da empresa -->
-        <li>
-            <a href="{% url 'pedidos:pedido_list' %}">
-                 <span class="badge badge-pill badge-info">
-                     {{pedidos.count}} pedidos
-                 </span>
-            </a>
-        </li>
+    <div class="row">
+        <div class="col-md-6 border border-dark">
+           <h5 class="text-center">Painel da Empresa: {{request.user.funcionario.empresa.nome}}</h5>
+            {% if empresa.ativo %}
+             <ul>
+                 <li>
+                     <a href="{% url 'funcionarios:funcionario_list' %}">
+                         <span class="badge badge-pill badge-info">
+                             {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia' %}
+                                {{funcionarios.count}} parceiros
+                             {% else %}
+                                {{funcionarios.count}} funcionários
+                             {% endif %}
+                         </span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="{% url 'clientes:cliente_list' %}">
+                         <span class="badge badge-pill badge-info">
+                             {{clientes.count}} clientes
+                         </span>
+                     </a>
+                 </li>
+                <li>
+                    <a href="{% url 'produtos:produto_list' %}">
+                         <span class="badge badge-pill badge-info">
+                             {{produtos.count}} produtos
+                         </span>
+                    </a>
+                </li>
+                 <!-- O pedido tem que vir com status para saber quando foi pago,
+                 para poder dar entrada no caixa da empresa -->
+                <li>
+                    <a href="{% url 'pedidos:pedido_list' %}">
+                         <span class="badge badge-pill badge-info">
+                             {{pedidos.count}} pedidos
+                         </span>
+                    </a>
+                </li>
 
-    </ul>
-    {% else %}
-        <p class="text-center bg-warning"><strong>Empresa temporariamente Inativa</strong></p>
-        <p class="text-center bg-warning">Mensagem: <strong>{{ empresa.razao_para_inativar }}</strong></p>
-    {% endif %}
+            </ul>
+            {% else %}
+                <p class="text-center bg-warning"><strong>Empresa temporariamente Inativa</strong></p>
+                <p class="text-center bg-warning">Mensagem: <strong>{{ empresa.razao_para_inativar }}</strong></p>
+            {% endif %}
+        </div>
+        {% if user.is_superuser %}
+            <div class="col-md-6 border border-dark">
+                <h5 class="text-center text-info">Painel do Administrador</h5>
+                <div class="text-center">
+                    <a class="btn btn-outline-success" href="{% url 'empresas:pagina_administrador' %}">Siga para a página do Adminstrador</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from apps.clientes.models import Cliente
+from apps.empresas.forms import EmpresaForm
 from apps.empresas.models import Empresa
 from apps.funcionarios.models import Funcionario
 from apps.pedidos.models import Pedido
@@ -29,7 +30,7 @@ class EmpresaDetailView(LoginRequiredMixin, DetailView):
 
 class EmpresaCreateView(LoginRequiredMixin, CreateView):
     model = Empresa
-    fields = '__all__'
+    form_class = EmpresaForm
     success_message = 'A Empresa %(nome)s foi criada com sucesso.'
 
     def form_valid(self, form):
@@ -44,7 +45,7 @@ class EmpresaCreateView(LoginRequiredMixin, CreateView):
 
 class EmpresaUpdateView(LoginRequiredMixin, UpdateView):
     model = Empresa
-    fields = '__all__'
+    form_class = EmpresaForm
     success_message = 'A Empresa %(nome)s foi atualizada com sucesso.'
 
 
@@ -68,3 +69,11 @@ def painel_empresa(request):
         'pedidos': pedidos,
     }
     return render(request, 'empresas/empresa_painel.html', context)
+
+
+def pagina_administrador(request):
+    empresas = Empresa.objects.all()
+    context = {
+        'empresas': empresas,
+    }
+    return render(request, 'empresas/pagina_administrador.html', context)

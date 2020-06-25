@@ -1,10 +1,12 @@
 from django import forms
 from django.forms import inlineformset_factory
 
+from apps.clientes.models import Cliente
 from apps.pedidos.models import Pedido, PedidoItem
 
 
 class PedidoForm(forms.ModelForm):
+
     class Meta:
         model = Pedido
         fields = ['cliente', 'loja', 'mesa', 'pedidostatus', 'tipo_de_pagamento', 'prazo_de_pagamento']

@@ -10,5 +10,6 @@ urlpatterns = [
 
 
     path('painel/', painel_empresa, name='painel_empresa'),
+    path('pagina_administrador/', pagina_administrador, name='pagina_administrador'),
 
 ]
