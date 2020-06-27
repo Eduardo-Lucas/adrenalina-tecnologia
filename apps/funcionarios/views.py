@@ -31,11 +31,15 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         funcionario = form.save(commit=False)
         username = funcionario.nome.split(' ')[0]
-        funcionario.empresa = self.request.user.funcionario.empresa
-        funcionario.user = User.objects.create(username=username)
-        funcionario.cadastrado_por = self.request.user
-        funcionario.save()
-        return super(FuncionarioCreateView, self).form_valid(form)
+        verifica_username = User.objects.get(username=username)
+        if verifica_username:
+            print('nome de usuario ja existe')
+        else:
+            funcionario.empresa = self.request.user.funcionario.empresa
+            funcionario.user = User.objects.create(username=username)
+            funcionario.cadastrado_por = self.request.user
+            funcionario.save()
+            return super(FuncionarioCreateView, self).form_valid(form)
 
 
 class FuncionarioUpdateView(LoginRequiredMixin, UpdateView):
