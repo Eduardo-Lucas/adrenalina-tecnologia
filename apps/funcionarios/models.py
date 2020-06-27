@@ -7,8 +7,9 @@ from apps.empresas.models import Empresa
 
 
 class Funcionario(models.Model):
-    """Manutenção do Cadastro de Funcionários"""
+    """ Manutenção do Cadastro de Funcionários, que virou Parceiros """
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.PROTECT)
+    cadastrado_por = models.ForeignKey(User, related_name='cadastrado_por', null=True, blank=True, on_delete=models.PROTECT)
     nome = models.CharField(max_length=100, )
     empresa = models.ForeignKey(Empresa, null=True, blank=True, on_delete=models.PROTECT)
     quantidade_clientes = models.PositiveIntegerField('Qtd Clientes', default=0)

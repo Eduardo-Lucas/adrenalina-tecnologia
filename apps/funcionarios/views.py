@@ -33,6 +33,7 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
         username = funcionario.nome.split(' ')[0]
         funcionario.empresa = self.request.user.funcionario.empresa
         funcionario.user = User.objects.create(username=username)
+        funcionario.cadastrado_por = self.request.user
         funcionario.save()
         return super(FuncionarioCreateView, self).form_valid(form)
 
