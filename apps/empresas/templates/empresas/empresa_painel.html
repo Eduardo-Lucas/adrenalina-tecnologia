@@ -13,11 +13,7 @@
                  <li>
                      <a href="{% url 'funcionarios:funcionario_list' %}">
                          <span class="badge badge-pill badge-info">
-                             {% if request.user.funcionario.empresa.nome == 'Adrenalina Tecnologia' %}
                                 {{funcionarios.count}} parceiros
-                             {% else %}
-                                {{funcionarios.count}} funcionários
-                             {% endif %}
                          </span>
                      </a>
                  </li>
