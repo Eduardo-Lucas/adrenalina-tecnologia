@@ -1,8 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.http import HttpResponseRedirect
 
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from apps.clientes.models import Cliente
@@ -43,10 +45,11 @@ class EmpresaCreateView(LoginRequiredMixin, CreateView):
         return redirect('empresas:painel_empresa')
 
 
-class EmpresaUpdateView(LoginRequiredMixin, UpdateView):
+class EmpresaUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Empresa
     form_class = EmpresaForm
     success_message = 'A Empresa %(nome)s foi atualizada com sucesso.'
+    success_url = reverse_lazy('empresas:painel_empresa')
 
 
 class EmpresaDeleteView(LoginRequiredMixin, DeleteView):

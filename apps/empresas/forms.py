@@ -11,8 +11,10 @@ class EmpresaForm(forms.ModelForm):
         labels = {
             'nome': 'Nome da Empresa',
             'razao_social': 'Razão Social',
+            'slug': 'Subdomínio',
             'tipo': 'Tipo',
-            'ativo': 'Status da Empresa',
+            'ativo': 'Empresa Ativa',
+            'razao_para_inativar': 'Mensagem se Inativa',
             'serve_refeicao': 'Serve Refeição',
             'codigo': 'Código da Empresa',
             'cnpj': 'CNPJ',
@@ -28,7 +30,6 @@ class EmpresaForm(forms.ModelForm):
             'observacao': 'Observações',
             'email': 'Email Principal',
             'data_fundacao': 'Data de Fundação (DD/MM/AAAA)',
-            'codigo': 'Código do Participante',
             'cep': 'CEP',
             'uf': 'Estado',
         }

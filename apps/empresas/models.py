@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 
-from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_CHOICES
+from apps.core.choices import INDICADOR_INSC_ESTADUAL_CHOICES, FISICA_JURIDICA_CHOICES, SIM_NAO_CHOICES
 
 
 # todo Para aparecer a lista de Mesas, precisa indicar que serve refeiçoes
@@ -70,4 +70,4 @@ class Empresa(models.Model):
 
     @staticmethod
     def get_absolute_url():
-        return reverse('empresas:empresa_list')
+        return reverse('empresas:painel_empresa')

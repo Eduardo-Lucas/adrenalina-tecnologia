@@ -12,13 +12,21 @@
         {% csrf_token %}
 
         <div class="row ">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 {{form.nome|as_crispy_field}}
             </div>
 
             <div class="col-md-2">
                 {{form.tipo|as_crispy_field}}
             </div>
+
+                    <div class="col-md-2">
+                        {{form.ativo|as_crispy_field}}
+                    </div>
+                    <div class="col-md-4">
+                        {{form.razao_para_inativar|as_crispy_field}}
+                    </div>
+
         </div>
 
         <div class="row mt-3">
@@ -64,6 +72,9 @@
         </div>
 
         <div class="row mt-3">
+            <div class="col-md-6">
+                {{form.slug|as_crispy_field}}
+            </div>
             <div class="col-md-6">
                 {{form.codigo|as_crispy_field}}
             </div>

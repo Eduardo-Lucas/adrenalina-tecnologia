@@ -46,8 +46,8 @@
                         <td>{{ empresa.nome }}</td>
                         <td>{{ empresa.telefone_comercial }}</td>
                         <td>
-                            <a href="{% url 'empresas:empresa_update' empresa.id %}" class="btn text-secondary px-0">
-                                <i class="far fa-edit fa-lg"> Editar</i>
+                            <a href="{% url 'empresas:empresa_update' empresa.id %}" class="btn text-warning px-0">
+                                <i class="far fa-edit "> Editar</i>
                             </a>
                             <!--<form action="#" method="post" class="d-inline">
                                 {% csrf_token %}
