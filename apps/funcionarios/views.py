@@ -1,5 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from apps.empresas.models import Empresa
@@ -31,9 +33,11 @@ class FuncionarioCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         funcionario = form.save(commit=False)
         username = funcionario.nome.split(' ')[0]
-        verifica_username = User.objects.get(username=username)
-        if verifica_username:
-            print('nome de usuario ja existe')
+        check = User.objects.filter(username=username)
+        if check:
+            messages.add_message(self.request, messages.ERROR,
+                                 'Já existe um Parceiro chamado ' + username + '. Escolha outro Nome')
+            return redirect('funcionarios:funcionario_create')
         else:
             funcionario.empresa = self.request.user.funcionario.empresa
             funcionario.user = User.objects.create(username=username)
