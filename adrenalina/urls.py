@@ -34,7 +34,9 @@ urlpatterns = [
     path('pedidos/', include('apps.pedidos.urls')),
     path('produtos/', include('apps.produtos.urls')),
 
-    path('password_change', PasswordChangeView.as_view(),
+    path('password_change', PasswordChangeView.as_view(
+        template_name='accounts/password_change_form.html'
+    ),
          name='password_change'),
 
     path('password_change_done', PasswordChangeDoneView.as_view(
