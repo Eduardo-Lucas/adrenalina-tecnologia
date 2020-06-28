@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
 from django.urls import path, include
 from django.conf.urls.static import static
-
+from django.contrib.auth import views as auth_views
 from adrenalina import settings
 
 urlpatterns = [
@@ -33,8 +34,32 @@ urlpatterns = [
     path('pedidos/', include('apps.pedidos.urls')),
     path('produtos/', include('apps.produtos.urls')),
 
+    path('password_change', PasswordChangeView.as_view(),
+         name='password_change'),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('password_change_done', PasswordChangeDoneView.as_view(
+        template_name='accounts/password_change_done.html'
+    ),
+         name='password_change_done'),
+
+
+    path('reset_password/',
+         auth_views.PasswordResetView.as_view(template_name="accounts/password_reset.html"),
+         name="reset_password"),
+
+    path('reset_password_sent/',
+         auth_views.PasswordResetDoneView.as_view(template_name="accounts/password_reset_sent.html"),
+         name="password_reset_done"),
+
+    path('reset/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_form.html"),
+         name="password_reset_confirm"),
+
+    path('reset_password_complete/',
+         auth_views.PasswordResetCompleteView.as_view(template_name="accounts/password_reset_done.html"),
+         name="password_reset_complete"),
+
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
